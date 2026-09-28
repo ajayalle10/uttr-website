@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Uttr — Select text. Hear it.</title>
+  <meta name="description" content="Uttr reads text aloud. Select text in any Windows app and press Ctrl+Alt+R, or select text on any website with the Uttr browser extension. Free and private. Made by Ajay Alle.">
+
+  <!-- How the page looks when shared on WhatsApp, LinkedIn, X, etc. -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Uttr — Select text. Hear it.">
+  <meta property="og:description" content="Free text-to-speech for Windows and your browser. Select text anywhere and hear it read aloud.">
+  <meta property="og:image" content="https://ajayalle10.github.io/uttr-website/images/extension-in-action.png">
+  <meta property="og:url" content="https://ajayalle10.github.io/uttr-website/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="images/favicon-48.png">
+  <link rel="apple-touch-icon" href="images/icon-128.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============================== NAVIGATION ============================== -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="#top" class="brand" aria-label="Uttr home">
+        <img src="images/logo.png" alt="" width="32" height="32">
+        <span>Uttr</span>
+      </a>
+      <nav class="nav-links" aria-label="Main">
+        <a href="#products">Products</a>
+        <a href="#features">Features</a>
+        <a href="#how-to-use">How to use</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a href="#download" class="btn btn-small btn-red">Download</a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============================== HERO ============================== -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="eyebrow">Free text-to-speech · by Ajay Alle</p>
+          <h1>Select text.<br><span class="red">Hear it.</span></h1>
+          <p class="lead">
+            Uttr reads text out loud, anywhere. Highlight words in Word, a PDF, an email or any website,
+            and Uttr speaks them in a natural voice, at the speed you like.
+          </p>
+          <div class="hero-buttons" id="download">
+            <a class="btn btn-red btn-big" href="https://github.com/ajayalle10/uttr-desktop/releases/latest/download/Uttr-Setup.exe">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5 10 4.5v7H3zM11 4.3 21 3v8.5H11zM3 12.5h7v7l-7-1zM11 12.5h10V21l-10-1.4z"/></svg>
+              <span>Download for Windows<small>Windows 10 &amp; 11 · free · 107 MB</small></span>
+            </a>
+            <a class="btn btn-outline btn-big" href="https://github.com/ajayalle10/uttr-chrome-extension/releases/latest/download/uttr.zip">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3.5"/></svg>
+              <span>Get the browser extension<small>Chrome · Edge · Brave · Opera</small></span>
+            </a>
+          </div>
+          <p class="hero-note" id="os-note" hidden></p>
+        </div>
+
+        <!-- A little "live" demo: a document with a highlighted sentence and Uttr's bar reading it. -->
+        <div class="hero-visual" aria-hidden="true">
+          <div class="doc">
+            <div class="doc-bar"><span></span><span></span><span></span><em>Quarterly report.docx</em></div>
+            <div class="doc-body">
+              <p class="doc-title">Why listening helps</p>
+              <p><mark>Hearing words while you read them helps you stay focused.</mark> It turns a long wall of text into something that feels like a conversation.</p>
+              <p class="doc-line"></p>
+              <p class="doc-line short"></p>
+            </div>
+          </div>
+          <div class="keys-float"><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>R</kbd></div>
+          <img class="bar-float" src="images/bar-reading.png" alt="" width="392" height="76">
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== PRODUCTS ============================== -->
+    <section class="section" id="products">
+      <div class="container">
+        <p class="eyebrow center">Two ways to use Uttr</p>
+        <h2 class="center">One idea. Everywhere you read.</h2>
+
+        <div class="products">
+          <article class="product">
+            <img src="images/settings.png" alt="Uttr for Windows settings window" width="330" height="459" loading="lazy">
+            <div>
+              <h3>Uttr for Windows</h3>
+              <p class="product-tag">Works in <strong>every app</strong> on your PC</p>
+              <p>Select text in Word, a PDF, Outlook, Slack, Chrome or anything else, press <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>R</kbd>, and a small bar appears at the bottom of your screen and reads it to you.</p>
+              <ul class="ticks">
+                <li>One keyboard shortcut, and you choose it</li>
+                <li>Floating bar with pause, speed and stop</li>
+                <li>Updates itself automatically</li>
+              </ul>
+              <a class="btn btn-red" href="https://github.com/ajayalle10/uttr-desktop/releases/latest/download/Uttr-Setup.exe">Download for Windows</a>
+            </div>
+          </article>
+
+          <article class="product">
+            <img src="images/extension-popup.png" alt="Uttr browser extension settings popup" width="300" height="360" loading="lazy">
+            <div>
+              <h3>Uttr Chrome Extension</h3>
+              <p class="product-tag">Reads <strong>any website</strong> the moment you select</p>
+              <p>No shortcut needed: highlight a sentence on any web page and Uttr starts reading straight away. Perfect for articles, blogs, news and study material.</p>
+              <ul class="ticks">
+                <li>Auto-reads as soon as you select</li>
+                <li>Voice, speed and on/off in one click</li>
+                <li>Chrome, Edge, Brave and Opera</li>
+              </ul>
+              <a class="btn btn-outline" href="https://github.com/ajayalle10/uttr-chrome-extension/releases/latest/download/uttr.zip">Download the extension</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== FEATURES ============================== -->
+    <section class="section section-alt" id="features">
+      <div class="container">
+        <p class="eyebrow center">Features</p>
+        <h2 class="center">Everything you need. Nothing you don't.</h2>
+
+        <div class="features">
+          <div class="feature">
+            <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+            <h3>Works in any app</h3>
+            <p>Word, Excel, PDFs, Outlook, Gmail, Slack, Teams, WhatsApp, Notion, and every website.</p>
+          </div>
+          <div class="feature">
+            <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 12h2M8 8v8M12 5v14M16 8v8M20 11v2"/></svg></div>
+            <h3>Floating reading bar</h3>
+            <p>A small bar shows what's happening, and it never steals focus from your work.</p>
+          </div>
+          <div class="feature">
+            <div class="icon"><svg viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></div>
+            <h3>Pause from the same word</h3>
+            <p>Pause and resume, and Uttr carries on from the exact word it stopped at.</p>
+          </div>
+          <div class="feature">
+            <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 20a8 8 0 1 1 8-8"/><path d="M12 12l5-3"/></svg></div>
+            <h3>Your speed</h3>
+            <p>Anywhere from 0.5× to 2×. Slow down to learn, or speed up to skim.</p>
+          </div>
+          <div class="feature">
+            <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3a3 3 0 0 1 3 3v6a3 3 0 0 1-6 0V6a3 3 0 0 1 3-3z"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></div>
+            <h3>Choose your voice</h3>
+            <p>Use any voice installed on your computer, male or female, in many languages.</p>
+          </div>
+          <div class="feature">
+            <div class="icon"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></svg></div>
+            <h3>Your own shortcut</h3>
+            <p>Don't like Ctrl + Alt + R? Record any key combination in Settings. It works instantly.</p>
+          </div>
+          <div class="feature">
+            <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+            <h3>Private by design</h3>
+            <p>No account, no tracking, no ads. Speech is made on your own device.</p>
+          </div>
+          <div class="feature">
+            <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 10h16M4 14h10M4 18h7"/></svg></div>
+            <h3>Handles long text</h3>
+            <p>Whole articles and reports are split into natural sentences and read smoothly to the end.</p>
+          </div>
+          <div class="feature">
+            <div class="icon"><svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.7"/><path d="M20 4v5h-5"/></svg></div>
+            <h3>Updates itself</h3>
+            <p>The Windows app quietly installs new versions, so you always have the latest.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== USE CASES ============================== -->
+    <section class="section" id="use-cases">
+      <div class="container">
+        <p class="eyebrow center">Where you can use it</p>
+        <h2 class="center">If you can select it, Uttr can read it.</h2>
+
+        <div class="usecases">
+          <div class="usecase">
+            <h3>📚 Studying</h3>
+            <p>Listen to notes, textbooks, PDFs and research papers. Hearing and reading together helps things stick.</p>
+          </div>
+          <div class="usecase">
+            <h3>💼 Work</h3>
+            <p>Let long emails, reports and documents read themselves while you rest your eyes or take notes.</p>
+          </div>
+          <div class="usecase">
+            <h3>✍️ Proofreading</h3>
+            <p>Hear your own writing out loud. Awkward sentences and missing words jump right out.</p>
+          </div>
+          <div class="usecase">
+            <h3>🌍 Learning a language</h3>
+            <p>Hear how words and sentences are really pronounced, at a slower speed if you like.</p>
+          </div>
+          <div class="usecase">
+            <h3>♿ Accessibility</h3>
+            <p>Helpful for dyslexia, low vision, ADHD, and anyone who finds listening easier than reading.</p>
+          </div>
+          <div class="usecase">
+            <h3>📰 Reading the web</h3>
+            <p>News, blogs, Wikipedia, recipes and long articles, read aloud as soon as you highlight them.</p>
+          </div>
+        </div>
+
+        <p class="apps-title">Works with apps like</p>
+        <ul class="apps">
+          <li>Microsoft Word</li><li>PDF readers</li><li>Outlook</li><li>Gmail</li><li>Chrome</li><li>Edge</li>
+          <li>Slack</li><li>Microsoft Teams</li><li>WhatsApp Desktop</li><li>Notion</li><li>Google Docs</li>
+          <li>Excel</li><li>PowerPoint</li><li>Notepad</li><li>Wikipedia</li><li>News sites</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================== HOW TO USE ============================== -->
+    <section class="section section-alt" id="how-to-use">
+      <div class="container narrow">
+        <p class="eyebrow center">How to use</p>
+        <h2 class="center">Up and running in 2 minutes</h2>
+
+        <!-- Tabs: script.js switches between the two guides. Without JavaScript, both are shown. -->
+        <div class="tabs" role="tablist" aria-label="Choose a product">
+          <button class="tab" role="tab" id="tab-windows" aria-controls="guide-windows" aria-selected="true">Windows app</button>
+          <button class="tab" role="tab" id="tab-extension" aria-controls="guide-extension" aria-selected="false">Browser extension</button>
+        </div>
+
+        <!-- ----- Windows guide ----- -->
+        <div class="guide" id="guide-windows" role="tabpanel" aria-labelledby="tab-windows">
+          <h3 class="guide-title">Install</h3>
+          <ol class="steps">
+            <li>
+              <strong>Download</strong> <a href="https://github.com/ajayalle10/uttr-desktop/releases/latest/download/Uttr-Setup.exe"><code>Uttr-Setup.exe</code></a>.
+            </li>
+            <li>
+              <strong>Double-click it.</strong> Uttr installs in a few seconds. No admin password is needed.
+            </li>
+            <li>
+              <strong>If Windows shows "Windows protected your PC",</strong> click <em>More info</em>, then <em>Run anyway</em>.
+              <span class="aside">This blue screen appears for new apps that aren't signed with a paid certificate. Uttr's full source code is public on GitHub.</span>
+            </li>
+            <li>
+              <strong>Done!</strong> You'll see <em>"Uttr is ready"</em> at the bottom of your screen, and the Uttr logo near the clock (it may be under the <strong>^</strong> arrow).
+            </li>
+          </ol>
+
+          <h3 class="guide-title">Use</h3>
+          <ol class="steps">
+            <li><strong>Select some text</strong> in any app.</li>
+            <li><strong>Press <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>R</kbd>.</strong> The Uttr bar slides up and reads it aloud.</li>
+            <li><strong>Control it from the bar</strong>: pause, change speed or stop. Or just press <kbd>Esc</kbd>.</li>
+          </ol>
+
+          <figure class="guide-figure">
+            <img src="images/bar-reading.png" alt="Uttr bar while reading: logo, sound wave, progress line, speed, pause and stop buttons" width="392" height="76" loading="lazy">
+            <img src="images/bar-paused.png" alt="Uttr bar while paused" width="392" height="76" loading="lazy">
+            <figcaption>The bar while reading (top) and paused (bottom)</figcaption>
+          </figure>
+
+          <h3 class="guide-title">Controls</h3>
+          <div class="table-wrap">
+            <table>
+              <tr><th>I want to…</th><th>Do this</th></tr>
+              <tr><td>Read text</td><td>Select it, press <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>R</kbd></td></tr>
+              <tr><td>Read something else</td><td>Select the new text, press the shortcut again</td></tr>
+              <tr><td>Stop</td><td><kbd>Esc</kbd>, the shortcut again, or <strong>■</strong> on the bar</td></tr>
+              <tr><td>Pause / resume</td><td><strong>⏸ / ▶</strong> on the bar, which resumes from the same word</td></tr>
+              <tr><td>Faster / slower</td><td>Click the <strong>1×</strong> button on the bar</td></tr>
+              <tr><td>Change shortcut, voice, speed</td><td>Click the Uttr icon near the clock to open <strong>Settings</strong></td></tr>
+              <tr><td>Start with Windows</td><td>Turn it on in <strong>Settings → General</strong></td></tr>
+              <tr><td>Check for updates</td><td>Right-click the Uttr icon → <strong>Check for updates</strong></td></tr>
+              <tr><td>Uninstall</td><td>Windows Settings → Apps → Installed apps → Uttr → Uninstall</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <!-- ----- Extension guide ----- -->
+        <div class="guide" id="guide-extension" role="tabpanel" aria-labelledby="tab-extension">
+          <h3 class="guide-title">Install</h3>
+          <ol class="steps">
+            <li><strong>Download</strong> <a href="https://github.com/ajayalle10/uttr-chrome-extension/releases/latest/download/uttr.zip"><code>uttr.zip</code></a> and <strong>unzip it</strong> (right-click → <em>Extract All</em> on Windows, double-click on Mac).</li>
+            <li><strong>Move the <code>uttr</code> folder somewhere permanent</strong>, like Documents. Don't delete it later, because your browser loads Uttr from it.</li>
+            <li><strong>Open your extensions page:</strong> type <code>chrome://extensions</code> (or <code>edge://extensions</code>) in the address bar.</li>
+            <li><strong>Turn on "Developer mode"</strong>: top-right in Chrome, left sidebar in Edge.</li>
+            <li><strong>Click "Load unpacked"</strong> and choose the <code>uttr</code> folder.</li>
+            <li><strong>Pin it:</strong> click the 🧩 puzzle icon, then the 📌 pin next to Uttr.</li>
+          </ol>
+          <p class="aside">Uttr isn't in the Chrome Web Store yet, which is why it's installed this way. One-click store versions are coming.</p>
+
+          <h3 class="guide-title">Use</h3>
+          <ol class="steps">
+            <li><strong>Open any website</strong>, and refresh tabs that were already open.</li>
+            <li><strong>Select some text</strong> with your mouse. Uttr reads it straight away. No shortcut needed.</li>
+            <li><strong>Select something else</strong> to switch, or press <kbd>Esc</kbd> to stop.</li>
+          </ol>
+
+          <figure class="guide-figure">
+            <img src="images/extension-popup.png" alt="Uttr extension popup: auto-read toggle, speed slider, voice picker and stop button" width="300" height="360" loading="lazy">
+            <figcaption>Click the Uttr icon in your toolbar for its settings</figcaption>
+          </figure>
+
+          <h3 class="guide-title">Controls</h3>
+          <div class="table-wrap">
+            <table>
+              <tr><th>I want to…</th><th>Do this</th></tr>
+              <tr><td>Read text</td><td>Select it with your mouse</td></tr>
+              <tr><td>Stop</td><td><kbd>Esc</kbd>, or the Uttr icon → <strong>Stop reading</strong></td></tr>
+              <tr><td>Pause auto-reading</td><td>Uttr icon → switch <strong>Auto-read</strong> off</td></tr>
+              <tr><td>Faster / slower</td><td>Uttr icon → <strong>Speed</strong> slider (0.5× to 2×)</td></tr>
+              <tr><td>Change voice</td><td>Uttr icon → <strong>Voice</strong></td></tr>
+              <tr><td>Re-read the same text</td><td>Click away to deselect, then select it again</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== FAQ ============================== -->
+    <section class="section" id="faq">
+      <div class="container narrow">
+        <p class="eyebrow center">FAQ</p>
+        <h2 class="center">Questions, answered</h2>
+
+        <details>
+          <summary>Is Uttr free?</summary>
+          <p>Yes. Both the Windows app and the browser extension are completely free, with no ads.</p>
+        </details>
+        <details>
+          <summary>Is my text sent anywhere?</summary>
+          <p>No. Uttr uses the voices built into your computer and browser, so your text stays on your device. There's no account, tracking or analytics. The Windows app only connects to GitHub to check for updates. (Some browser voices marked "Google" or "Online" are provided by your browser over the internet. Pick a different voice to keep everything offline.)</p>
+        </details>
+        <details>
+          <summary>Why does Windows show "Windows protected your PC"?</summary>
+          <p>Windows shows that screen for any new app that isn't signed with a paid code-signing certificate. Click <em>More info → Run anyway</em>. Uttr's complete source code is public on GitHub for anyone to check.</p>
+        </details>
+        <details>
+          <summary>How does the Windows app read text from other apps?</summary>
+          <p>When you press the shortcut, Uttr briefly copies your selection (like pressing Ctrl+C), reads it, and then puts your clipboard back exactly as it was. Nothing is stored.</p>
+        </details>
+        <details>
+          <summary>Can I change the shortcut from Ctrl + Alt + R?</summary>
+          <p>Yes. Click the Uttr icon near the clock, then <em>Change</em> under Activation shortcut, and press any combination that includes Ctrl, Alt or the Windows key. If another app already uses it, Uttr will tell you.</p>
+        </details>
+        <details>
+          <summary>How do I get more or better voices?</summary>
+          <p>On Windows, go to <em>Settings → Time &amp; language → Speech → Add voices</em>. New voices then appear in Uttr's voice list.</p>
+        </details>
+        <details>
+          <summary>It doesn't read in one particular app. Why?</summary>
+          <p>A few places don't allow copying, such as password fields, some protected documents, and apps running "as administrator". Everything else should work.</p>
+        </details>
+        <details>
+          <summary>Is there a Mac, iPhone or Android version?</summary>
+          <p>Not yet. The browser extension works on Mac in Chrome, Edge and Brave today. A Mac app and an Android version are on the roadmap.</p>
+        </details>
+        <details>
+          <summary>What about Firefox and Safari?</summary>
+          <p>A Firefox version is ready and on its way to Firefox Add-ons. Safari isn't supported yet.</p>
+        </details>
+        <details>
+          <summary>How do I uninstall?</summary>
+          <p><strong>Windows app:</strong> Settings → Apps → Installed apps → Uttr → Uninstall. <strong>Extension:</strong> open <code>chrome://extensions</code>, click <em>Remove</em> on Uttr, then delete the <code>uttr</code> folder.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============================== FINAL CALL TO ACTION ============================== -->
+    <section class="cta">
+      <div class="container center">
+        <img src="images/logo.png" alt="" width="72" height="72">
+        <h2>Ready to give your eyes a break?</h2>
+        <p>Free. Private. Takes two minutes.</p>
+        <div class="hero-buttons centered">
+          <a class="btn btn-red btn-big" href="https://github.com/ajayalle10/uttr-desktop/releases/latest/download/Uttr-Setup.exe">Download for Windows</a>
+          <a class="btn btn-outline btn-big" href="https://github.com/ajayalle10/uttr-chrome-extension/releases/latest/download/uttr.zip">Get the browser extension</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================== FOOTER + TERMS ============================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a href="#top" class="brand"><img src="images/logo.png" alt="" width="28" height="28"><span>Uttr</span></a>
+          <p class="muted">Select text. Hear it.<br>Made by Ajay Alle.</p>
+        </div>
+        <div>
+          <h4>Download</h4>
+          <a href="https://github.com/ajayalle10/uttr-desktop/releases/latest/download/Uttr-Setup.exe">Uttr for Windows</a>
+          <a href="https://github.com/ajayalle10/uttr-chrome-extension/releases/latest/download/uttr.zip">Uttr Chrome Extension</a>
+        </div>
+        <div>
+          <h4>Source code</h4>
+          <a href="https://github.com/ajayalle10/uttr-desktop">uttr-desktop on GitHub</a>
+          <a href="https://github.com/ajayalle10/uttr-chrome-extension">uttr-chrome-extension on GitHub</a>
+        </div>
+        <div>
+          <h4>Help</h4>
+          <a href="#how-to-use">How to use</a>
+          <a href="#faq">FAQ</a>
+          <a href="https://github.com/ajayalle10/uttr-desktop/issues">Report a problem</a>
+          <a href="#terms">Terms &amp; Conditions</a>
+        </div>
+      </div>
+
+      <section class="legal" id="terms" aria-labelledby="terms-title">
+        <h2 id="terms-title">Terms &amp; Conditions</h2>
+        <p class="muted">Last updated: 28 September 2026</p>
+
+        <p>These terms apply to the Uttr Windows app, the Uttr browser extension and this website (together, "Uttr"). Uttr is made by Ajay Alle. By downloading, installing or using Uttr, you agree to these terms. If you don't agree, please don't use Uttr.</p>
+
+        <h3>1. Free to use</h3>
+        <p>Uttr is free for personal and professional use. You may install it on as many of your own devices as you like. The Uttr name, logo and source code remain the property of Ajay Alle. Publishing the code is not a licence to copy, sell, rebrand or redistribute Uttr without written permission.</p>
+
+        <h3>2. Acceptable use</h3>
+        <p>Use Uttr lawfully. You're responsible for the content you choose to have read aloud, and for respecting the rights of its owners. Don't try to modify Uttr to harm, disrupt or gain unauthorised access to any computer, app or service.</p>
+
+        <h3>3. Privacy</h3>
+        <p>Uttr doesn't collect, store or sell personal data. Text you select is passed to the speech voices on your device (or, for "online" voices, to your browser's speech service) only to read it aloud. The Windows app contacts GitHub only to check for updates. Settings are stored on your own device. See the privacy policies for the <a href="https://github.com/ajayalle10/uttr-chrome-extension/blob/main/PRIVACY.md">extension</a> and the <a href="https://github.com/ajayalle10/uttr-desktop#privacy">Windows app</a>.</p>
+
+        <h3>4. Third-party services</h3>
+        <p>Uttr relies on software it doesn't control, including Windows and browser speech voices, your web browser and GitHub (for downloads and updates). Their own terms and privacy policies apply to your use of them.</p>
+
+        <h3>5. Updates</h3>
+        <p>The Windows app may download and install updates automatically to fix problems and add features. Features may change or be removed over time.</p>
+
+        <h3>6. No warranty</h3>
+        <p>Uttr is provided "as is" and "as available", without warranties of any kind, express or implied, including fitness for a particular purpose. Speech may not always be accurate or perfectly pronounced. Uttr is not a certified assistive-technology or medical device and shouldn't be relied on where accuracy is critical.</p>
+
+        <h3>7. Limitation of liability</h3>
+        <p>To the fullest extent permitted by law, Ajay Alle is not liable for any indirect, incidental or consequential damages, or for any loss of data, profits or business, arising from your use of, or inability to use, Uttr. Nothing in these terms limits liability that can't be limited under applicable law.</p>
+
+        <h3>8. Changes to these terms</h3>
+        <p>These terms may be updated from time to time. The "last updated" date above will change when they are. Continuing to use Uttr after a change means you accept the updated terms.</p>
+
+        <h3>9. Contact</h3>
+        <p>Questions about these terms or about Uttr? Open an issue on <a href="https://github.com/ajayalle10/uttr-desktop/issues">GitHub</a>.</p>
+      </section>
+
+      <p class="copyright">© <span id="year">2026</span> Ajay Alle. Uttr is free for everyone who'd rather listen.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
