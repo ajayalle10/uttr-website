@@ -289,74 +289,15 @@ code {
   font-size: 14px;
 }
 
-/* The pretend document + floating bar */
+/* The hero image: an article being read by Uttr's bar */
 .hero-visual {
   position: relative;
-  padding-bottom: 60px;
 }
 
-.doc {
-  background: var(--white);
-  color: #33312c;
-  border-radius: var(--radius);
+.hero-img {
+  width: 100%;
+  border-radius: 22px;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
-  overflow: hidden;
-  transform: rotate(-1.5deg);
-}
-
-.doc-bar {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  height: 38px;
-  padding: 0 14px;
-  background: #ebe7de;
-}
-
-.doc-bar span {
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  background: #cfc9bd;
-}
-
-.doc-bar em {
-  margin-left: 10px;
-  font-style: normal;
-  font-size: 13px;
-  color: #6b675f;
-}
-
-.doc-body {
-  padding: 26px 28px 30px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 17px;
-  line-height: 1.75;
-}
-
-.doc-title {
-  font-weight: 700;
-  font-size: 22px;
-  margin-bottom: 10px;
-  color: #1b1a17;
-}
-
-.doc mark {
-  background: rgba(224, 73, 47, 0.22);
-  color: inherit;
-  border-radius: 3px;
-  padding: 1px 0;
-}
-
-.doc-line {
-  height: 10px;
-  margin-top: 14px;
-  border-radius: 5px;
-  background: #ebe7de;
-}
-
-.doc-line.short {
-  width: 60%;
 }
 
 .keys-float {
@@ -372,29 +313,52 @@ code {
   animation: float 4s ease-in-out infinite;
 }
 
-.bar-float {
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  width: min(392px, 92%);
-  transform: translateX(-50%);
-  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.6));
-  animation: rise 4s ease-in-out infinite;
-}
-
 @keyframes float {
   50% { transform: translateY(-8px); }
-}
-
-@keyframes rise {
-  50% { transform: translate(-50%, -6px); }
 }
 
 /* People who've asked their system for less motion get a still page. */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .keys-float, .bar-float { animation: none; }
+  .keys-float { animation: none; }
   .btn { transition: none; }
+}
+
+/* ---------------------------------------------------------------- Showcase images */
+
+/* The large illustrations (how it works, products, in control, speed). */
+.wide-img {
+  width: 100%;
+  border-radius: 24px;
+  box-shadow: 0 0 0 1px var(--line), 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+.caption {
+  margin-top: 18px;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* Text on one side, picture on the other. */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 56px;
+  align-items: center;
+  margin-top: 64px;
+}
+
+.split h2 {
+  margin-bottom: 18px;
+}
+
+.split .lead {
+  margin-bottom: 0;
+  font-size: 18px;
+}
+
+.guide-banner {
+  margin-bottom: 36px;
 }
 
 /* ---------------------------------------------------------------- Sections */
@@ -415,22 +379,14 @@ code {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
+  margin-top: 28px;
 }
 
 .product {
-  display: grid;
-  grid-template-columns: 210px 1fr;
-  gap: 24px;
-  align-items: start;
   padding: 28px;
   border-radius: var(--radius);
   background: var(--ink);
   border: 1px solid var(--line);
-}
-
-.product img {
-  border-radius: 12px;
-  box-shadow: 0 0 0 1px var(--line);
 }
 
 .product h3 {
@@ -849,8 +805,13 @@ details p {
 
 @media (max-width: 960px) {
   .hero-inner,
-  .products {
+  .products,
+  .split {
     grid-template-columns: 1fr;
+  }
+
+  .split {
+    gap: 32px;
   }
 
   .hero {
@@ -896,12 +857,12 @@ details p {
   }
 
   .product {
-    grid-template-columns: 1fr;
     padding: 22px;
   }
 
-  .product img {
-    max-width: 220px;
+  .wide-img,
+  .hero-img {
+    border-radius: 14px;
   }
 
   .features,

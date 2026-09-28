@@ -10,7 +10,10 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Uttr — Select text. Hear it.">
   <meta property="og:description" content="Free text-to-speech for Windows and your browser. Select text anywhere and hear it read aloud.">
-  <meta property="og:image" content="https://ajayalle10.github.io/uttr-website/images/extension-in-action.png">
+  <meta property="og:image" content="https://ajayalle10.github.io/uttr-website/images/share-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Uttr — Select text anywhere. Hear it.">
   <meta property="og:url" content="https://ajayalle10.github.io/uttr-website/">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -31,6 +34,7 @@
         <span>Uttr</span>
       </a>
       <nav class="nav-links" aria-label="Main">
+        <a href="#how-it-works">How it works</a>
         <a href="#products">Products</a>
         <a href="#features">Features</a>
         <a href="#how-to-use">How to use</a>
@@ -65,20 +69,23 @@
           <p class="hero-note" id="os-note" hidden></p>
         </div>
 
-        <!-- A little "live" demo: a document with a highlighted sentence and Uttr's bar reading it. -->
-        <div class="hero-visual" aria-hidden="true">
-          <div class="doc">
-            <div class="doc-bar"><span></span><span></span><span></span><em>Quarterly report.docx</em></div>
-            <div class="doc-body">
-              <p class="doc-title">Why listening helps</p>
-              <p><mark>Hearing words while you read them helps you stay focused.</mark> It turns a long wall of text into something that feels like a conversation.</p>
-              <p class="doc-line"></p>
-              <p class="doc-line short"></p>
-            </div>
-          </div>
-          <div class="keys-float"><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>R</kbd></div>
-          <img class="bar-float" src="images/bar-reading.png" alt="" width="392" height="76">
+        <!-- An article with a highlighted sentence, being read by Uttr's bar. -->
+        <div class="hero-visual">
+          <img class="hero-img" src="images/hero-reading.webp" width="2000" height="1125"
+               alt="An article titled 'Why listening helps you learn' with one sentence highlighted, and the Uttr bar below it reading it aloud">
+          <div class="keys-float" aria-hidden="true"><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>R</kbd></div>
         </div>
+      </div>
+    </section>
+
+    <!-- ============================== HOW IT WORKS ============================== -->
+    <section class="section" id="how-it-works">
+      <div class="container">
+        <p class="eyebrow center">How it works</p>
+        <h2 class="center">Three steps. That's it.</h2>
+        <img class="wide-img" src="images/how-it-works.webp" width="2000" height="775" loading="lazy"
+             alt="Step 1: select any text. Step 2: press the shortcut Ctrl + Alt + R. Step 3: listen, as the Uttr bar reads it aloud.">
+        <p class="caption">Using the browser extension? Skip step 2. It starts reading as soon as you select.</p>
       </div>
     </section>
 
@@ -88,9 +95,11 @@
         <p class="eyebrow center">Two ways to use Uttr</p>
         <h2 class="center">One idea. Everywhere you read.</h2>
 
+        <img class="wide-img" src="images/products.webp" width="2000" height="1250" loading="lazy"
+             alt="Side by side: the Uttr Chrome extension popup (highlight anything on any website) and the Uttr Windows app settings (select text in any app, press a shortcut)">
+
         <div class="products">
           <article class="product">
-            <img src="images/settings.png" alt="Uttr for Windows settings window" width="330" height="459" loading="lazy">
             <div>
               <h3>Uttr for Windows</h3>
               <p class="product-tag">Works in <strong>every app</strong> on your PC</p>
@@ -105,7 +114,6 @@
           </article>
 
           <article class="product">
-            <img src="images/extension-popup.png" alt="Uttr browser extension settings popup" width="300" height="360" loading="lazy">
             <div>
               <h3>Uttr Chrome Extension</h3>
               <p class="product-tag">Reads <strong>any website</strong> the moment you select</p>
@@ -118,6 +126,24 @@
               <a class="btn btn-outline" href="https://github.com/ajayalle10/uttr-chrome-extension/releases/latest/download/uttr.zip">Download the extension</a>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== IN CONTROL ============================== -->
+    <section class="section" id="control">
+      <div class="container">
+        <img class="wide-img" src="images/stay-in-control.webp" width="2000" height="1125" loading="lazy"
+             alt="You stay in control: pause, change the speed, or stop, right from the small bar on your screen. The bar is shown while reading and while paused.">
+
+        <div class="split">
+          <div>
+            <p class="eyebrow">Your speed, your way</p>
+            <h2>Slow down to learn.<br>Speed up to skim.</h2>
+            <p class="lead">Pick any speed from 0.5× to 2× in Settings, or tap the speed button on the bar while Uttr is reading. It changes straight away, carries on from the same word, and Uttr remembers it for next time.</p>
+          </div>
+          <img class="wide-img" src="images/reading-speed.webp" width="2000" height="1333" loading="lazy"
+               alt="Reading speed slider set to 1.25×, on a scale from 0.5× to 2×">
         </div>
       </div>
     </section>
@@ -283,6 +309,8 @@
 
         <!-- ----- Extension guide ----- -->
         <div class="guide" id="guide-extension" role="tabpanel" aria-labelledby="tab-extension">
+          <img class="wide-img guide-banner" src="images/extension-banner.png" width="1400" height="560" loading="lazy"
+               alt="Uttr browser extension: select text, hear it. Highlight anything on any website and hear it read aloud.">
           <h3 class="guide-title">Install</h3>
           <ol class="steps">
             <li><strong>Download</strong> <a href="https://github.com/ajayalle10/uttr-chrome-extension/releases/latest/download/uttr.zip"><code>uttr.zip</code></a> and <strong>unzip it</strong> (right-click → <em>Extract All</em> on Windows, double-click on Mac).</li>
