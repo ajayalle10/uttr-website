@@ -53,5 +53,82 @@ if (note) {
   }
 }
 
+// ---------------------------------------------------------------- Live stats
+// Real numbers only. Anything that can't be loaded is hidden, never faked.
+
+const COUNTER = "https://abacus.jasoncameron.dev";
+const COUNTER_NAMESPACE = "ajayalle10-uttr-website";
+
+// Downloads = the real installer/extension files people download. The small
+// files the Windows app fetches to check for updates (latest.yml, .blockmap)
+// are not counted.
+const DOWNLOAD_REPOS = ["ajayalle10/uttr-desktop", "ajayalle10/uttr-chrome-extension"];
+const DOWNLOAD_FILES = ["Uttr-Setup.exe", "uttr.zip", "uttr-firefox.zip"];
+
+// Browser storage can be blocked (private windows, strict settings), so every
+// use is wrapped: the counters still work, just without the extras.
+const store = {
+  get(area, key) { try { return window[area].getItem(key); } catch { return null; } },
+  set(area, key, value) { try { window[area].setItem(key, value); } catch {} },
+};
+
+/**
+ * Visits: add one the first time this page is opened in a browser session,
+ * so refreshing doesn't inflate the number. Returns the total.
+ */
+async function loadVisits() {
+  const alreadyCounted = store.get("sessionStorage", "uttr-visit-counted");
+  const url = alreadyCounted ? `${COUNTER}/get/${COUNTER_NAMESPACE}/visits` : `${COUNTER}/hit/${COUNTER_NAMESPACE}/visits`;
+  const response = await fetch(url);
+  if (!response.ok) throw new Error("counter unavailable");
+  const { value } = await response.json();
+  store.set("sessionStorage", "uttr-visit-counted", "1");
+  return value;
+}
+
+/**
+ * Downloads: GitHub counts every download of every release file. Add up the
+ * installer and extension files across all releases of both projects.
+ * Cached for 10 minutes (GitHub allows each visitor 60 lookups an hour).
+ */
+async function loadDownloads() {
+  const cached = JSON.parse(store.get("localStorage", "uttr-downloads") || "null");
+  if (cached && Date.now() - cached.time < 10 * 60 * 1000) return cached.total;
+
+  const perRepo = await Promise.all(DOWNLOAD_REPOS.map(async (repo) => {
+    const response = await fetch(`https://api.github.com/repos/${repo}/releases?per_page=100`);
+    if (!response.ok) throw new Error("GitHub unavailable");
+    const releases = await response.json();
+    return releases.flatMap((r) => r.assets)
+      .filter((asset) => DOWNLOAD_FILES.includes(asset.name))
+      .reduce((sum, asset) => sum + asset.download_count, 0);
+  }));
+  const total = perRepo.reduce((a, b) => a + b, 0);
+  store.set("localStorage", "uttr-downloads", JSON.stringify({ total, time: Date.now() }));
+  return total;
+}
+
+/** Count up from 0 to `value` (instantly if the visitor prefers less motion). */
+function showNumber(id, value) {
+  const el = document.getElementById(id);
+  document.getElementById(`${id}-box`).hidden = false;
+  const format = (n) => Math.round(n).toLocaleString();
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || value < 10) {
+    el.textContent = format(value);
+    return;
+  }
+  const start = performance.now();
+  const duration = 1200;
+  const tick = (now) => {
+    const t = Math.min(1, (now - start) / duration);
+    el.textContent = format(value * (1 - Math.pow(1 - t, 3))); // ease-out
+    if (t < 1) requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+}
+
+loadVisits().then((n) => showNumber("stat-visits", n)).catch(() => {});
+loadDownloads().then((n) => showNumber("stat-downloads", n)).catch(() => {});
+
 // ---------------------------------------------------------------- Footer year
 document.getElementById("year").textContent = new Date().getFullYear();

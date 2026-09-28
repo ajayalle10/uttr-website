@@ -324,6 +324,51 @@ code {
   .btn { transition: none; }
 }
 
+/* ---------------------------------------------------------------- Live stats band */
+
+.stats {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--ink);
+}
+
+.stats-inner {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px 56px;
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
+
+.stat {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.stat[hidden] {
+  display: none;
+}
+
+.stat-icon {
+  font-size: 20px;
+  align-self: center;
+}
+
+.stat-number {
+  color: var(--red);
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums; /* digits don't jiggle while counting up */
+}
+
+.stat-label {
+  color: var(--muted);
+  font-size: 15px;
+}
+
 /* ---------------------------------------------------------------- Showcase images */
 
 /* The large illustrations (how it works, products, in control, speed). */
